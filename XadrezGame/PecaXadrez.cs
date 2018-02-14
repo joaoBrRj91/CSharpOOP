@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace XadrezGame
 {
-    class Class1
+    class PecaXadrez
     {
-        public int MyProperty { get; set; }
-        public int MyProperty2 { get; set; }
-
     }
 }
