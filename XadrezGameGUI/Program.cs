@@ -1,16 +1,14 @@
 ﻿using System;
-using XadrezApp.Tabuleiro;
 
+
+//TODO: Retirar a referencia para o dominio,pois no design DDD a camada de UI não conhece o dominio e sim a appication
 namespace XadrezGameGUI
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Posicao p = new Posicao(linha: 3, coluna: 4);
-
-            Console.WriteLine(p);
-            Console.ReadKey();
+          
         }
     }
 }

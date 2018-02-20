@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Text;
 
-namespace XadrezApp.Tabuleiro
+namespace Core.Entities
 {
     public class Posicao: IDisposable
     {
+        #region Construtores
+        public Posicao(int linha, int coluna)
+        {
+            this.Linha = linha;
+            this.Coluna = coluna;
+        }
+        #endregion
 
         #region Propriedades
         public int Linha { get; set; }
@@ -13,14 +20,6 @@ namespace XadrezApp.Tabuleiro
 
         #region Campos Privados
         private StringBuilder mensagem;
-        #endregion
-
-        #region Construtores
-        public Posicao(int linha, int coluna)
-        {
-            this.Linha = linha;
-            this.Coluna = coluna;
-        }
         #endregion
 
         #region Metodos Publicos
@@ -37,7 +36,6 @@ namespace XadrezApp.Tabuleiro
             mensagem = null;
         }
         #endregion
-
 
     }
 }
