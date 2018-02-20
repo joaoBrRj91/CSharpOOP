@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using XadrezApp.Tabuleiro;
 
 namespace XadrezGameGUI
 {
@@ -10,6 +7,10 @@ namespace XadrezGameGUI
     {
         static void Main(string[] args)
         {
+            Posicao p = new Posicao(linha: 3, coluna: 4);
+
+            Console.WriteLine(p);
+            Console.ReadKey();
         }
     }
 }
