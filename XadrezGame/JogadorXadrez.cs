@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XadrezGame
 {
-    class Jogador
+    class JogadorXadrez
     {
     }
 }

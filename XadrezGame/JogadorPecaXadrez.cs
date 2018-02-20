@@ -8,7 +8,7 @@ namespace XadrezGame
 {
     class JogadorPecaXadrez
     {
-        public Jogador Jogador { get; set; }
+        public JogadorXadrez Jogador { get; set; }
         public PecaXadrez Peca { get; set; }
 
     }

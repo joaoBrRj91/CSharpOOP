@@ -9,7 +9,7 @@ namespace XadrezGame
     class Tabuleiro
     {
 
-        public Jogador[] Jogadores { get; set; }
+        public JogadorXadrez[] Jogadores { get; set; }
         public List<PecaXadrez> Pecas { get; set; }
 
     }

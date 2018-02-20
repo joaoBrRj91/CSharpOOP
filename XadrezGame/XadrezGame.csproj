@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Jogador.cs" />
+    <Compile Include="JogadorXadrez.cs" />
     <Compile Include="JogadorPecaXadrez.cs" />
     <Compile Include="PecaXadrez.cs" />
     <Compile Include="Tabuleiro.cs" />
