@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XadrezGame
 {
-    class Tabuleiro
+    class TabuleiroXadrez
     {
 
         public JogadorXadrez[] Jogadores { get; set; }
