@@ -13,6 +13,9 @@
         #endregion
 
         #region Campos Privados
+        /*TODO: Podemos refatorar posteriormente para um objeto "Posicao"; ou seja, teriamos
+         uma matriz de posição, visto que o tabuleiro é composto dessa forma, e a posição iria possuir
+         dois vetores contendo as peças do usuario e adversario*/
         private Peca[,] Pecas;
         #endregion
 

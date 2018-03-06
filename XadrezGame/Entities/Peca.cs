@@ -18,7 +18,7 @@ namespace Core.Entities
 
         public int QtedMovimentos { get; protected set; } = 0;
 
-        //Associação do tipo composição: Uma peçoa tem obrigatoriamente uma posição
+        //Associação do tipo composição: Uma peça tem obrigatoriamente uma posição
         public Posicao Posicao { get; set; }
 
         //Associação do tipo composição: Uma peçoa tem obrigatoriamente uma posição
