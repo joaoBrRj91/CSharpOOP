@@ -24,6 +24,7 @@
         public int Colunas { get; set; }
         #endregion
 
+        #region Métodos Públicos
         public Peca ObterPecaPorLinhaColuna(int linha, int coluna) => Pecas[linha, coluna];
 
         public bool PosicaoEspecificaTabuleiroPossuiPeca(int linha, int coluna)
@@ -31,7 +32,8 @@
             if (Pecas[linha, coluna] == null)
                 return false;
             return true;
-        } 
+        }
+        #endregion
 
     }
 }

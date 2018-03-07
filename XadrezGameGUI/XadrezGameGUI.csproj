@@ -49,6 +49,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\XadrezApp\XadrezApp.csproj">
       <Project>{c4835205-d34a-42c0-9a46-34adec2aeb95}</Project>

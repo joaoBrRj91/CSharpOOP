@@ -1,15 +1,16 @@
-﻿using Core.Entities;
-using System;
+﻿using System;
+using XadrezApp.Model;
+using XadrezApp.Adapter;
 
-
-namespace XadrezApp.App
+namespace XadrezApp.AppClass
 {
     public class TabuleiroApp
     {
 
-        public static void ImprimirTabuleiro()
+        public static void ImprimirTabuleiro(TabuleiroModel tabuleiroModel)
         {
-            Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+
+            var tabuleiro = tabuleiroModel.ToTabuleiro();
 
             for (int i = 0; i < tabuleiro.Linhas; i++)
             {
@@ -22,6 +23,7 @@ namespace XadrezApp.App
 
                 }
                 Console.WriteLine();
+
 
             }
 
