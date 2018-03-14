@@ -40,9 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\PecaAdapter.cs" />
+    <Compile Include="Adapter\PosicaoAdapter.cs" />
     <Compile Include="Adapter\TabuleiroAdapter.cs" />
     <Compile Include="AppClass\TabuleiroApp.cs" />
+    <Compile Include="AppClass\XadrezGlobalApp.cs" />
+    <Compile Include="Builder\PecaBuilder.cs" />
+    <Compile Include="ConfigApp\XadrezConfiguracoes.cs" />
+    <Compile Include="Enum\CorPeca.cs" />
+    <Compile Include="Model\PecaModel.cs" />
+    <Compile Include="Model\PosicaoModel.cs" />
+    <Compile Include="Model\ReiModel.cs" />
     <Compile Include="Model\TabuleiroModel.cs" />
+    <Compile Include="Model\TorreModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +61,9 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Factory\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,16 +1,32 @@
 ﻿using System;
 using XadrezApp.Model;
 using XadrezApp.Adapter;
+using Core.Entities;
+using XadrezApp.Builder;
+
 
 namespace XadrezApp.AppClass
 {
-    public class TabuleiroApp
+    public  class TabuleiroApp
     {
 
-        public static void ImprimirTabuleiro(TabuleiroModel tabuleiroModel)
+        public TabuleiroApp()
+        {
+            InicializarTabuleiroXadrez();
+        }
+
+        private void InicializarTabuleiroXadrez()
+        {
+            if (tabuleiro == null)
+                tabuleiro = XadrezGlobalApp.ObterTabuleiroDoJogo();
+
+        }
+
+        private  Tabuleiro tabuleiro;
+
+        public  void ImprimirTabuleiro()
         {
 
-            var tabuleiro = tabuleiroModel.ToTabuleiro();
 
             for (int i = 0; i < tabuleiro.Linhas; i++)
             {
@@ -29,5 +45,10 @@ namespace XadrezApp.AppClass
 
         }
 
+        public  void ColocarPecaTabuleiro(PecaModel pecaModel, PosicaoModel posicaoModel)
+        {
+            var peca = pecaModel.Build(/*tabuleiro:tabuleiro*/posicaoModel:posicaoModel);
+            tabuleiro.ColocarPeca(peca);
+        }
     }
 }

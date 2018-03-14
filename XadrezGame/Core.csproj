@@ -45,6 +45,8 @@
     <Compile Include="Entities\Cor.cs" />
     <Compile Include="Entities\Peca.cs" />
     <Compile Include="Entities\Posicao.cs" />
+    <Compile Include="XadrezEntities\Rei.cs" />
+    <Compile Include="XadrezEntities\Torre.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

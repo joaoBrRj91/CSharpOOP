@@ -33,6 +33,10 @@
                 return false;
             return true;
         }
+
+        public void ColocarPeca(Peca peca) => Pecas[peca.Posicao.Linha, peca.Posicao.Coluna] = peca;
+
+        
         #endregion
 
     }
