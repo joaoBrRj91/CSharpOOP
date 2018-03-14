@@ -48,6 +48,7 @@ namespace XadrezApp.AppClass
         public  void ColocarPecaTabuleiro(PecaModel pecaModel, PosicaoModel posicaoModel)
         {
             var peca = pecaModel.Build(/*tabuleiro:tabuleiro*/posicaoModel:posicaoModel);
+            //TODO; Criar um factoryMethod para criar uma peça de acordo com o nome digitado pelo cliente
             tabuleiro.ColocarPeca(peca);
         }
     }
