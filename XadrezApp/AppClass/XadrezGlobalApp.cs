@@ -1,7 +1,7 @@
 ﻿
-using Core.Entities;
 using XadrezApp.ConfigApp;
-using XadrezApp.Model;
+using XadrezApp.Validation;
+using XadrezGame.Entities;
 
 namespace XadrezApp.AppClass
 {
@@ -9,8 +9,15 @@ namespace XadrezApp.AppClass
     {
         private static Tabuleiro tabuleiro;
 
-        public static void  InicializarJogo() => tabuleiro = new Tabuleiro(XadrezConfiguracoes.LINHAS_TABULEIRO, XadrezConfiguracoes.COLUNAS_TABULEIRO);
+        public static void InicializarJogo()
+        {
+            tabuleiro = new Tabuleiro(XadrezConfiguracoes.LINHAS_TABULEIRO, XadrezConfiguracoes.COLUNAS_TABULEIRO);
+            Validacao = new ValidationResult();
+        }
+
 
         public static Tabuleiro ObterTabuleiroDoJogo() => tabuleiro;
+
+        public static ValidationResult Validacao { get; private set; }
     }
 }

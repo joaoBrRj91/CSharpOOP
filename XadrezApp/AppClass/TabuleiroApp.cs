@@ -1,9 +1,9 @@
 ﻿using System;
 using XadrezApp.Model;
 using XadrezApp.Adapter;
-using Core.Entities;
 using XadrezApp.Builder;
-
+using XadrezGame.Entities;
+using XadrezGame.Exceptions;
 
 namespace XadrezApp.AppClass
 {
@@ -27,29 +27,57 @@ namespace XadrezApp.AppClass
         public  void ImprimirTabuleiro()
         {
 
-
-            for (int i = 0; i < tabuleiro.Linhas; i++)
+            if (XadrezGlobalApp.Validacao.EhValido)
             {
-                for (int j = 0; j < tabuleiro.Colunas; j++)
+
+                for (int i = 0; i < tabuleiro.Linhas; i++)
                 {
-                    if (!tabuleiro.PosicaoEspecificaTabuleiroPossuiPeca(linha: i, coluna: j))
-                        Console.Write("- ");
-                    else
-                        Console.Write(tabuleiro.ObterPecaPorLinhaColuna(linha: i, coluna: j) + " ");
+                    for (int j = 0; j < tabuleiro.Colunas; j++)
+                    {
+                        if (!tabuleiro.PosicaoEspecificaTabuleiroPossuiPeca(linha: i, coluna: j))
+                            Console.Write("- ");
+                        else
+                            Console.Write(tabuleiro.ObterPecaPorLinhaColuna(linha: i, coluna: j) + " ");
+
+                    }
+                    Console.WriteLine();
+
 
                 }
-                Console.WriteLine();
-
-
+            }
+            else
+            {
+                ExibirErrosEncontrados();
             }
 
+        }
+
+        public void ExibirErrosEncontrados()
+        {
+            foreach (var erro in XadrezGlobalApp.Validacao.Erros)
+            {
+                Console.WriteLine(erro.MensagemException);
+            }
         }
 
         public  void ColocarPecaTabuleiro(PecaModel pecaModel, PosicaoModel posicaoModel)
         {
             var peca = pecaModel.Build(/*tabuleiro:tabuleiro*/posicaoModel:posicaoModel);
             //TODO; Criar um factoryMethod para criar uma peça de acordo com o nome digitado pelo cliente
-            tabuleiro.ColocarPeca(peca);
+            try
+            {
+                tabuleiro.ColocarPeca(peca);
+
+            }
+            catch (TabuleiroException tex)
+            {
+                XadrezGlobalApp.Validacao.AddErro(tex.Message);
+
+            }
+            catch (Exception e)
+            {
+                XadrezGlobalApp.Validacao.AddErro(e.Message, e.StackTrace);
+            }
         }
     }
 }

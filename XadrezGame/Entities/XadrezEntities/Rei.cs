@@ -1,8 +1,6 @@
 ﻿
 
-using Core.Entities;
-
-namespace XadrezGame.XadrezEntities
+namespace XadrezGame.Entities.XadrezEntities
 {
     public class Rei : Peca
     {

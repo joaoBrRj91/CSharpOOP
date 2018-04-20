@@ -6,7 +6,7 @@ namespace XadrezApp.Model
     {
         public CorPeca Cor { get;  set; }
 
-        public string Nome { get; set; }
+        public NomePeca Nome { get; set; }
 
         public PosicaoModel Posicao { get; set; }
 

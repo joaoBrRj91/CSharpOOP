@@ -41,13 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Tabuleiro.cs" />
+    <Compile Include="Exceptions\TabuleiroException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Cor.cs" />
     <Compile Include="Entities\Peca.cs" />
     <Compile Include="Entities\Posicao.cs" />
-    <Compile Include="XadrezEntities\Rei.cs" />
-    <Compile Include="XadrezEntities\Torre.cs" />
+    <Compile Include="Entities\XadrezEntities\Rei.cs" />
+    <Compile Include="Entities\XadrezEntities\Torre.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

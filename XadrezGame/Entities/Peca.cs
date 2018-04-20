@@ -1,5 +1,5 @@
 ﻿
-namespace Core.Entities
+namespace XadrezGame.Entities
 {
     public class Peca
     {

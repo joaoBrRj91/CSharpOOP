@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
 
-namespace Core.Entities
-{
+namespace XadrezGame.Entities
+{ 
     public class Posicao: IDisposable
     {
         #region Construtores

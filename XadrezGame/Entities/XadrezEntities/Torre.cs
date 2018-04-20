@@ -1,10 +1,9 @@
-﻿using Core.Entities;
-
-namespace XadrezGame.XadrezEntities
+﻿namespace XadrezGame.Entities.XadrezEntities
 {
+
     public class Torre : Peca
     {
-        public Torre(/*Tabuleiro tabuleiro, */Cor cor,string nome) : base(/*tabuleiro, */cor, nome)
+        public Torre(/*Tabuleiro tabuleiro, */Cor cor, string nome) : base(/*tabuleiro, */cor, nome)
         {
 
         }

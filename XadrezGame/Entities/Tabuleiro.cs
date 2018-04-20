@@ -1,4 +1,8 @@
-﻿namespace Core.Entities
+﻿
+
+using XadrezGame.Exceptions;
+
+namespace XadrezGame.Entities
 {
     public class Tabuleiro
     {
@@ -34,9 +38,33 @@
             return true;
         }
 
-        public void ColocarPeca(Peca peca) => Pecas[peca.Posicao.Linha, peca.Posicao.Coluna] = peca;
+        public void ColocarPeca(Peca peca)
+        {
+            if (ExistePecaNaPosicao(peca.Posicao))
+                throw new TabuleiroException("Já existe uma peça nessa posição!!.");
 
-        
+            Pecas[peca.Posicao.Linha, peca.Posicao.Coluna] = peca;
+
+        }
+        public bool ExistePecaNaPosicao(Posicao posicao)
+        {
+            ValidarPosicao(posicao);
+            return ObterPecaPorLinhaColuna(posicao.Linha, posicao.Coluna) != null;
+
+        }
+
+        public void ValidarPosicao(Posicao posicao)
+        {
+            if (!PosicaoEhValida(posicao))
+                throw new TabuleiroException("Posição Invalida!!.");
+        }
+
+        public bool PosicaoEhValida(Posicao posicao)
+        {
+            return (posicao.Linha < 0 || posicao.Linha >= Linhas || posicao.Coluna < 0 || posicao.Coluna >= Colunas);
+        }
+
+
         #endregion
 
     }

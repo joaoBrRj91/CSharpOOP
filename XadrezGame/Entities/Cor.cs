@@ -1,4 +1,4 @@
-﻿namespace Core.Entities
+﻿namespace XadrezGame.Entities
 {
     public enum Cor
     {

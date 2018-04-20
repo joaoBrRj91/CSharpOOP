@@ -1,6 +1,6 @@
 ﻿
-using Core.Entities;
 using XadrezApp.Model;
+using XadrezGame.Entities;
 
 namespace XadrezApp.Adapter
 {
