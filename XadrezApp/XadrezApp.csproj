@@ -43,6 +43,7 @@
     <Compile Include="Adapter\PecaAdapter.cs" />
     <Compile Include="Adapter\PosicaoAdapter.cs" />
     <Compile Include="Adapter\TabuleiroAdapter.cs" />
+    <Compile Include="AppClass\JogoXadrezApp.cs" />
     <Compile Include="AppClass\TabuleiroApp.cs" />
     <Compile Include="AppClass\XadrezGlobalApp.cs" />
     <Compile Include="Builder\PecaBuilder.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Factory\PecaFactory.cs" />
     <Compile Include="Model\PecaModel.cs" />
     <Compile Include="Model\PosicaoModel.cs" />
+    <Compile Include="Model\PosicaoXadrezModel.cs" />
     <Compile Include="Model\ReiModel.cs" />
     <Compile Include="Model\TabuleiroModel.cs" />
     <Compile Include="Model\TorreModel.cs" />

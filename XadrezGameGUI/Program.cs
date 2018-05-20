@@ -1,7 +1,6 @@
 ﻿using System;
 using XadrezApp.AppClass;
-using XadrezApp.Enum;
-using XadrezApp.Model;
+
 
 
 //TODO: Retirar a referencia para o dominio,pois no design DDD a camada de UI não conhece o dominio e sim a appication
@@ -13,18 +12,29 @@ namespace XadrezGameGUI
         {
             XadrezGlobalApp.InicializarJogo();
 
-            PecaModel peca1 = new TorreModel() { Nome = NomePeca.Torre, Cor = XadrezApp.Enum.CorPeca.Preta };
-            PecaModel peca2 = new ReiModel() { Nome = NomePeca.Rei, Cor = XadrezApp.Enum.CorPeca.Preta };
+            try
+            {
+                do
+                {
 
-            var posicao1 = new PosicaoModel(linha:0,coluna:0);
-            var posicao2 = new PosicaoModel(linha: 3, coluna: 4);
+                    Console.Clear();
+                    XadrezGlobalApp.tabuleiroApp.ImprimirTabuleiro();
+                    Console.Write("Origem: ");
+                    var origem = XadrezGlobalApp.tabuleiroApp.LerPosicaoXadrez();
+                    Console.Write("Destino: ");
+                    var destino = XadrezGlobalApp.tabuleiroApp.LerPosicaoXadrez();
+
+                    XadrezGlobalApp.jogoXadrezApp.RealizarMovimentoPeca(origem, destino);
 
 
-            TabuleiroApp tabApp = new TabuleiroApp();
-            tabApp.ColocarPecaTabuleiro(pecaModel: peca1, posicaoModel: posicao1);
-            tabApp.ColocarPecaTabuleiro(pecaModel: peca2, posicaoModel: posicao2);
+                } while (!XadrezGlobalApp.jogoXadrezApp.PartidaXadrezTerminada());
 
-            tabApp.ImprimirTabuleiro();
+            }
+            catch (Exception e)
+            {
+
+                 Console.WriteLine(String.Format("Um erro ocorreu no app. Execute novamente: {0}", e.Message));
+            }
 
 
         }

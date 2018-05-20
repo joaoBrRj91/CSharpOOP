@@ -19,6 +19,8 @@ namespace XadrezGame.Entities
 
         public int QtedMovimentos { get; protected set; } = 0;
 
+
+
         public string Nome { get; set; }
 
         //Associação do tipo composição: Uma peça tem obrigatoriamente uma posição
@@ -26,6 +28,8 @@ namespace XadrezGame.Entities
 
         //Associação do tipo composição: Uma peçoa tem obrigatoriamente uma posição
         //public Tabuleiro Tabuleiro { get; protected set; }
+
+        public void IncrementarQtdMovimentos() => QtedMovimentos++;
         #endregion
     }
 }

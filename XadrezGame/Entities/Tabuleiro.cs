@@ -28,7 +28,8 @@ namespace XadrezGame.Entities
         public int Colunas { get; set; }
         #endregion
 
-        #region Métodos Públicos
+
+        #region Manipulação tabuleiro
         public Peca ObterPecaPorLinhaColuna(int linha, int coluna) => Pecas[linha, coluna];
 
         public bool PosicaoEspecificaTabuleiroPossuiPeca(int linha, int coluna)
@@ -38,7 +39,7 @@ namespace XadrezGame.Entities
             return true;
         }
 
-        public void ColocarPeca(Peca peca)
+        public void ColocarPeca(Peca peca,Posicao posicao)
         {
             if (ExistePecaNaPosicao(peca.Posicao))
                 throw new TabuleiroException("Já existe uma peça nessa posição!!.");
@@ -46,6 +47,20 @@ namespace XadrezGame.Entities
             Pecas[peca.Posicao.Linha, peca.Posicao.Coluna] = peca;
 
         }
+
+        public Peca RetirarPecaDaPosicao(Posicao posicao)
+        {
+            if (!PosicaoEspecificaTabuleiroPossuiPeca(posicao.Linha,posicao.Coluna))
+                throw new TabuleiroException("Não existe peça nessa posição");
+
+            Peca pecaAtual = ObterPecaPorLinhaColuna(posicao.Linha, posicao.Coluna);
+            Pecas[posicao.Linha, posicao.Coluna] = null;
+            return pecaAtual;
+
+        }
+        #endregion
+
+        #region Validações 
         public bool ExistePecaNaPosicao(Posicao posicao)
         {
             ValidarPosicao(posicao);
@@ -55,17 +70,17 @@ namespace XadrezGame.Entities
 
         public void ValidarPosicao(Posicao posicao)
         {
-            if (!PosicaoEhValida(posicao))
+            if (PosicaoInvalida(posicao))
                 throw new TabuleiroException("Posição Invalida!!.");
         }
 
-        public bool PosicaoEhValida(Posicao posicao)
+        public bool PosicaoInvalida(Posicao posicao)
         {
             return (posicao.Linha < 0 || posicao.Linha >= Linhas || posicao.Coluna < 0 || posicao.Coluna >= Colunas);
         }
-
-
         #endregion
+
+
 
     }
 }
